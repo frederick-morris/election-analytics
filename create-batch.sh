@@ -1,10 +1,13 @@
-CONUM=2290
+# Name: create-batch.sh
+# Description: Create web scraper job for each county 
 
-while read cnty; do
+CONUM=2290  # init county number
+
+while read cnty; do             # for each county                  
   echo "$cnty"
 
 
-  /bin/su -c "cat <<'EOF'> $cnty"${1}".batch
+  /bin/su -c "cat <<'EOF'> $cnty"${1}".batch    # create batch script
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH --mem=4G
