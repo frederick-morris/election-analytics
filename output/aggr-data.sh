@@ -1,7 +1,7 @@
 # Name: aggr-data.sh
 # Description: aggregates cleaned HTML queries into readable table
 
-while read cnty; do # for each county
+  cnty="${1}"
   echo "$cnty"
   file="${cnty}-ballot-out.csv" # output format
   echo "" > "${file}" # clear file
@@ -52,4 +52,3 @@ while read cnty; do # for each county
 
   echo -e '\n' >> "${file}"
   done
-done < /mnt/orangefs/team3/jobs/counties.txt
